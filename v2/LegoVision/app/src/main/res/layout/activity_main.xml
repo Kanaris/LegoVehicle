@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context="info.privateblog.legovision.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0">
+
+            <Button
+                android:text="connect"
+                android:layout_height="wrap_content"
+                android:id="@+id/connectButton"
+                android:layout_weight="0."
+                android:layout_width="wrap_content"
+                android:layout_gravity="left|center_horizontal" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bluetoothAdapters"
+                android:layout_weight="0.25"
+                android:minHeight="48dp"
+                tools:gravity="fill_horizontal|start"
+                android:gravity="fill_horizontal|start"
+                android:minWidth="100dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="100"
+            android:layout_weight="60"
+            android:layout_gravity="top">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="3"
+                android:layout_weight="20">
+
+                <ImageButton
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/up"
+                    android:id="@+id/upButton"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:padding="2dp"
+                    tools:ignore="ContentDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_columnWeight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/down"
+                    android:id="@+id/downButton"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:padding="2dp"
+                    tools:ignore="ContentDescription"
+                    android:layout_columnWeight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/left"
+                    android:id="@+id/leftButton"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:padding="2dp"
+                    android:layout_columnWeight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/right"
+                    android:id="@+id/rightButton"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:padding="2dp"
+                    android:layout_columnWeight="1" />
+
+            </GridLayout>
+
+            <SurfaceView
+                android:id="@+id/surfaceView"
+                android:layout_weight="60"
+                android:layout_height="match_parent"
+                android:layout_width="320dp" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:rowCount="5"
+                android:columnCount="5"
+                android:layout_marginLeft="2dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="20">
+
+                    <Switch
+                        android:text="Camera"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:id="@+id/cameraSwitch"
+                        android:layout_weight="0"
+                        android:checked="true" />
+
+                    <Switch
+                        android:text="Light"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lightSwitch"
+                        android:layout_weight="0"
+                        android:layout_marginTop="30dp" />
+                </LinearLayout>
+            </GridLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/logText"
+            android:enabled="false"
+            android:layout_gravity="top"
+            android:layout_weight="30" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
